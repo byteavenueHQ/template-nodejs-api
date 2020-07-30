@@ -1,0 +1,153 @@
+openapi: 3.0.1
+info:
+    title: Template for nodejs
+    description: description
+    termsOfService: https://localhost:8059/terms
+    contact:
+        email: example@email.com
+    license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+    version: 1.0.0
+externalDocs:
+    description: Find out more about Swagger
+    url: http://swagger.io
+servers:
+    - url: http://localhost:8059/
+tags:
+    - name: user
+      description: information about user
+paths:
+    /:
+        get:
+            tags:
+                - user
+            summary: verify whether the app is working
+            description: this route gives you information about the app
+            operationId: getstarted
+            responses:
+                200:
+                    description: Operation unsuccessfull
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                        example: 'true'
+                                    message:
+                                        type: string
+                                        example: Something went wrong!
+                                    payload:
+                                        type: object
+                                        properties: {}
+                                        example: {}
+                201:
+                    description: Operation Successfull, resource created
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                        example: 'false'
+                                    message:
+                                        type: string
+                                        example:
+                                            Congratulations! We were able to
+                                            fetch your app data.
+                                    payload:
+                                        type: object
+                                        properties:
+                                            type: object
+                                        example: {}
+                400:
+                    description: Invalid input
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/ApiErrorResponse'
+components:
+    schemas:
+        UserCredentials:
+            type: object
+            properties:
+                first_name:
+                    type: string
+                    example: John
+                last_name:
+                    type: string
+                    example: Snow
+                email:
+                    type: string
+                    example: john.snow@got.us
+                password:
+                    type: string
+                    example: gotis4<34
+                confirm_password:
+                    type: string
+                    example: gotis4<34
+                google_recaptcha:
+                    type: string
+        User:
+            type: object
+            properties:
+                uid:
+                    type: string
+                    example: hstnwi6wbs5g
+                usename:
+                    type: string
+                    example: johnsnow
+                first_name:
+                    type: string
+                    example: John
+                last_name:
+                    type: string
+                    example: Snow
+                about:
+                    type: string
+                    example: I am a Programmer
+                picture:
+                    type: string
+                    example: https://images5.alphacoders.com/415/thumb-1920-415296.jpg
+        ApiErrorResponse:
+            type: object
+            properties:
+                error:
+                    type: boolean
+                    example: true
+                message:
+                    type: string
+                    example: Your entries are not valid!
+                payload:
+                    type: object
+                    properties: {}
+                    example: {}
+        ApiSuccessResponse:
+            type: object
+            properties:
+                error:
+                    type: boolean
+                    example: false
+                message:
+                    type: string
+                    example: Your account information was updated successfully!
+                payload:
+                    type: object
+                    properties: {}
+                    example: '#/definations/User'
+    securitySchemes:
+        petstore_auth:
+            type: oauth2
+            flows:
+                implicit:
+                    authorizationUrl: http://petstore.swagger.io/oauth/dialog
+                    scopes:
+                        write:pets: modify pets in your account
+                        read:pets: read your pets
+        api_key:
+            type: apiKey
+            name: api_key
+            in: header

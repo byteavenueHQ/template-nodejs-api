@@ -6,6 +6,7 @@ require('dotenv').config();
 require('./src/components/db/setup').connect();
 
 const usersRouter = require('./src/components/user/index');
+const swaggerDocs = require('./src/docs/index');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', usersRouter);
+app.use('/swagger', swaggerDocs);
 
 // error handler
 // catch 404 and forward to error handler
