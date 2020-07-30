@@ -8,7 +8,11 @@
 		"precommit": "lint-staged",
 		"start": "node ./bin/www",
 		"test": "APP_ENV=development mocha --exit --timeout 10000",
-		"deploy": "bash ./deploy.sh"
+		"release:patch": "yarn version --patch",
+		"release:minor": "yarn version --minor",
+		"release:major": "yarn version --major",
+		"preversion": "yarn test && git add . && git commit -u",
+		"postversion": "git push"
 	},
 	"husky": {
 		"hooks": {
@@ -20,7 +24,6 @@
 		"debug": "~2.6.9",
 		"dotenv": "^8.2.0",
 		"express": "~4.16.1",
-		"mocha": "^7.1.2",
 		"mongoose": "^5.9.13",
 		"morgan": "~1.9.1",
 		"shortid": "^2.2.15",
@@ -28,13 +31,16 @@
 		"yamljs": "^0.3.0"
 	},
 	"devDependencies": {
-		"husky": "^4.2.5",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
 		"eslint": "^7.0.0",
-		"eslint-plugin-prettier": "^3.1.3",
 		"eslint-config-airbnb-base": "^14.1.0",
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-prettier": "^3.1.3",
+		"husky": "^4.2.5",
 		"lint-staged": "^10.2.2",
+		"mocha": "^7.1.2",
 		"prettier": "^2.0.5"
 	}
 }

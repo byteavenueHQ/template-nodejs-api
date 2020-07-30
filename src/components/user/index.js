@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./controller.js');
 
-// signup via email
+// template route
 router.get('/', (req, res) => {
 	res.status(200).send(controller.getStarted());
 });

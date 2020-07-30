@@ -16,5 +16,13 @@
         {
           "varsIgnorePattern": "should|expect"
         }
-      ]}
+      ]},
+    "overrides": [
+      {
+        "files": ["*.test.js", "*.spec.js"],
+        "rules": {
+            "no-unused-expressions": "off"
+        }
+      }
+    ]
    }
