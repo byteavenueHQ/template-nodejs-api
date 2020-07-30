@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('your_app_name:server');
 var http = require('http');
+const { hostname } = require('os');
 /**
  * Get port from environment and store in Express.
  */
@@ -86,5 +87,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log(`App is up and running on port ${port}, click here - ${addr} , ${bind}`)
+  console.log(`App is up and running on ${bind}, click here - http://${hostname}:${port}`)
 }

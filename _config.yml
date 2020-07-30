@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
-title: Nodejs app API Template
+title: A Template for NodeJs API server
 description:
-    Nodejs app template with linting, api docs, tests and other configurations.
+    Spin up a nodejs server ready to be deployed in production within a minute

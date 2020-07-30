@@ -55,8 +55,7 @@ paths:
                                         example: 'false'
                                     message:
                                         type: string
-                                        example:
-                                            Congratulations! We were able to
+                                        example: Congratulations! We were able to
                                             fetch your app data.
                                     payload:
                                         type: object
