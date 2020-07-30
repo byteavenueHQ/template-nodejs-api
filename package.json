@@ -1,7 +1,7 @@
 {
 	"name": "your_app_name",
 	"description": "A quickstart nodejs app with dotenv, mongodb(mongoose), automatic linting using husky, eslint and prettier inetgration.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"private": false,
 	"license": "Apache-2.0",
 	"scripts": {
