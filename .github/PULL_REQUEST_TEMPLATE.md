@@ -10,9 +10,5 @@ issue when PR gets merged)_: fixes #
 
 -   [ ] Does this PR have a corresponding GitHub issue?
 -   [ ] Have you added debug messages where necessary?
--   [ ] Have you added task comments where necessary?
--   [ ] Have you tested the changes for possible failure conditions?
--   [ ] Have you tested the UI results in large screen (min screen width 1000px)
--   [ ] Have you tested the UI results in mobile view (min screen width 400px)
 
 **Special notes for your reviewer**:
