@@ -36,7 +36,8 @@
 
 #### Follow these steps to get your app up and running within minutes
 
--   Clone this repo
+-   Click on `Use this emplate`, create your repo and clone it into your local
+    machine
 -   Upgrade all the dependencies and their version
     ```
     yarn upgrade --latest
@@ -98,11 +99,6 @@
 After you have the project up and running you can play around with almost any
 file.
 
--   Add your own git (i.e, remove mine), use the following command
-    ```
-    rm -rf .git
-    git init
-    ```
 -   Customize `./src/docs/swagger.yml` file - pre development, during
     development or post development
 -   Update the `.eslintrc`, `.prettierrc`, `.prettierignore` and
@@ -116,7 +112,9 @@ Please make use of the ISSUE_TEMPLATES for opening issues and making PRs
 
 # Credits
 
-This project was bootstraped by [@rajchandra3](https://github.com/rajchandra3)
+This project was bootstraped by
+[@rajchandra3](https://github.com/rajchandra3).  
+For contributions please feel free to make a PR.
 
 # License
 
