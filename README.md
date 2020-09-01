@@ -19,7 +19,7 @@
     -   Added test route to understand the file structure and code splitting
 -   Database connection using `mongoose`, based on environment (production
     ready)
--   Enviroment variable to help you control the app environment using `dotenv`
+-   Environment variable to help you control the app environment using `dotenv`
 -   `Swagger` for API documentation
 -   Pre-configured `husky` to run `eslint` and `prettier` on precommit hook,
     helps maintain best practices
