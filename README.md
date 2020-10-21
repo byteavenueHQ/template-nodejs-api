@@ -36,7 +36,7 @@
 
 #### Follow these steps to get your app up and running within minutes
 
--   Click on `Use this emplate`, create your repo and clone it into your local
+-   Click on `Use this template`, create your repo and clone it into your local
     machine
 -   Upgrade all the dependencies and their version
     ```
