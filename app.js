@@ -1,13 +1,13 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-require('dotenv').config();
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import 'dotenv/config.js';
+import connect from './src/components/db/setup.js';
+import userRouter from './src/components/user/index.js';
+import swaggerRouter from './src/docs/index.js';
+
 // connect to db
-require('./src/components/db/setup').connect();
-
-const usersRouter = require('./src/components/user/index');
-const swaggerDocs = require('./src/docs/index');
-
+connect();
 const app = express();
 
 app.use(logger('dev'));
@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', usersRouter);
-app.use('/swagger', swaggerDocs);
+app.use('/', userRouter);
+app.use('/swagger', swaggerRouter);
 
 // error handler
 // catch 404 and forward to error handler
@@ -46,4 +46,4 @@ app.use((err, req, res, next) => {
 	next();
 });
 
-module.exports = app;
+export default app;

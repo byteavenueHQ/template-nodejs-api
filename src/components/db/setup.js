@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.set('useCreateIndex', true);
 
@@ -28,6 +28,4 @@ const connect = () => {
 	);
 };
 
-module.exports = {
-	connect,
-};
+export default connect;

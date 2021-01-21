@@ -1,11 +1,11 @@
-const express = require('express');
+import express from 'express';
+import getStarted from './controller.js';
 
-const router = express.Router();
-const controller = require('./controller.js');
+const userRouter = express.Router();
 
 // template route
-router.get('/', (req, res) => {
-	res.status(200).send(controller.getStarted());
+userRouter.get('/', (req, res) => {
+	res.status(200).send(getStarted());
 });
 
-module.exports = router;
+export default userRouter;

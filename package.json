@@ -4,9 +4,11 @@
 	"version": "0.0.7",
 	"private": false,
 	"license": "Apache-2.0",
+	"type": "module",
 	"scripts": {
 		"precommit": "lint-staged",
 		"start": "node ./bin/www",
+		"watch:dev": "nodemon node ./bin/www",
 		"test": "APP_ENV=development mocha --exit --timeout 10000",
 		"release:patch": "yarn version --patch",
 		"release:minor": "yarn version --minor",
