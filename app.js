@@ -1,7 +1,9 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import 'dotenv/config.js';
+
+import './config.js'; // why? see here - https://www.npmjs.com/package/dotenv#how-do-i-use-dotenv-with-import-
+
 import connect from './src/components/db/setup.js';
 import userRouter from './src/components/user/index.js';
 import swaggerRouter from './src/docs/index.js';
